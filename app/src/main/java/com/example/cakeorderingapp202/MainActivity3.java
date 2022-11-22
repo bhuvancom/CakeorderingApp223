@@ -37,6 +37,7 @@ public class MainActivity3 extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 int total = 0;
                 StringBuilder result = new StringBuilder();
                 result.append("Cake flavours Selected are\n");
@@ -61,14 +62,9 @@ public class MainActivity3 extends AppCompatActivity {
                     return;
                 }
 
-                result.append("Total Amount: Rs " + total);
+                result.append("Total Amount: Rs ").append(total);
                 String result1 = String.valueOf(result);
-                String date = deliverydate.getText().toString();
-                Intent intent = new Intent(MainActivity3.this, MainActivity4.class);
-
-                intent.putExtra("date", date);
-                intent.putExtra("result", result1);
-                startActivity(intent);
+                selectDate(result1);
             }
         });
 
@@ -89,7 +85,32 @@ public class MainActivity3 extends AppCompatActivity {
                 datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
                 datePickerDialog.show();
             }
-
         });
+    }
+
+    private void selectDate(String result1) {
+        final Calendar cal = Calendar.getInstance();
+        mDate = cal.get(Calendar.DATE);
+        mMonth = cal.get(Calendar.MONTH);
+        mYear = cal.get(Calendar.YEAR);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity3.this, android.R.style.Theme_DeviceDefault_Dialog, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int dateO) {
+                deliverydate.setText(dateO + "-" + month + "-" + year);
+                String date = deliverydate.getText().toString();
+                if (date.trim().isEmpty()) {
+                    Toast.makeText(MainActivity3.this, "Select at the delivery date", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                Intent intent = new Intent(MainActivity3.this, MainActivity2.class);
+                intent.putExtra("date", date);
+                intent.putExtra("result", result1);
+                startActivity(intent);
+            }
+        }, mYear, mMonth, mDate);
+        datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
+        datePickerDialog.show();
     }
 }

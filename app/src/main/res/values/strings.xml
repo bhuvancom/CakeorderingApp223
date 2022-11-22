@@ -4,4 +4,9 @@
     <string name="splash_middle_text">Welcome to Don\'t Tell Aunty</string>
     <string name="menu_sc_mohit">K.SAI MOHIT KUMAR - 20191CSE0223</string>
     <string name="menu">Menu</string>
+    <string name="dont">Don\'t Tell Aunty\nOne Stop for Tasty Cakes</string>
+    <string name="contact_information">Contact Information</string>
+    <string name="name">Name</string>
+    <string name="mobile">Contact Number</string>
+    <string name="address">Address</string>
 </resources>
