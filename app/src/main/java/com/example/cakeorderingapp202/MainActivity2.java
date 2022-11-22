@@ -37,7 +37,8 @@ public class MainActivity2 extends AppCompatActivity {
                 intent1.putExtra("name", cname);
                 intent1.putExtra("phone", cp);
                 intent1.putExtra("address", cad);
-
+                intent1.putExtra("date", getIntent().getStringExtra("date"));
+                intent1.putExtra("result", getIntent().getStringExtra("result"));
                 startActivity(intent1);
             }
         });
