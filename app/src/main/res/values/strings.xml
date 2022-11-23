@@ -9,4 +9,9 @@
     <string name="name">Name</string>
     <string name="mobile">Contact Number</string>
     <string name="address">Address</string>
+    <string name="home">Goto Home</string>
+    <string name="package_details">Package Details</string>
+    <string name="delivery_details">Delivery Details</string>
+    <string name="delivery_content">%s</string>
+    <string name="contact_details">Customer Name :\t%s\nMobile :\t%s\nAddress :\t%s\nDelivery Date : \t%s</string>
 </resources>

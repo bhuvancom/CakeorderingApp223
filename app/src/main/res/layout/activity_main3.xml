@@ -11,6 +11,7 @@
         android:id="@+id/tv_menu_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:padding="8dp"
         android:text="@string/menu_sc_mohit"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
@@ -251,7 +252,6 @@
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:text="Order Now"
         android:textColor="@color/black"
         app:backgroundTint="@color/white" />
